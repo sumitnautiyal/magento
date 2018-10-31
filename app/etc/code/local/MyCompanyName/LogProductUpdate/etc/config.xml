@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <MyCompanyName_LogProductUpdate>
+            <version>0.0.1</version>
+        </MyCompanyName_LogProductUpdate>
+    </modules>
+    <global>
+        <models>
+            <mycompanyname_logproductupdate>
+                <class>MyCompanyName_LogProductUpdate_Model</class>
+            </mycompanyname_logproductupdate>
+        </models>
+        <events>
+            <catalog_product_save_after>
+                <observers>
+                    <mycompanyname_logproductupdate>
+                        <class>mycompanyname_logproductupdate/observer</class>
+                        <method>logUpdate</method>
+                        <type>singleton</type>
+                    </mycompanyname_logproductupdate>
+                </observers>
+            </catalog_product_save_after>
+        </events>
+    </global>
+</config>
